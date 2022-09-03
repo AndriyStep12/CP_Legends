@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 5px;
+}
+
+@keyframes animate {
+  0%, 10%, 100% {
+    width: 0;
+  }
+  70%, 90% {
+    width: 600px;
+  }
+}
+@keyframes animatetwo {
+  0%, 10%, 100% {
+    width: 0;
+  }
+  70%, 90% {
+    width: 400px;
+  }
+}
+@keyframes animatethree {
+  0%, 10%, 100% {
+    width: 0;
+  }
+  70%, 90% {
+    width: 300px;
+  }
+}
+@keyframes dropdown {
+  0%, 100% {
+    margin-bottom: 0;
+  }
+  50% {
+    margin-bottom: 30px;
+  }
+}
+body {
+  background-color: #000;
+  color: #fff;
+  background: #000;
+}
+body header {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+body header h2 {
+  font-size: 30px;
+}
+body .wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-image: url(img/wrap_bg.jfif);
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+  align-items: center;
+}
+body .wrap .box-text {
+  margin-top: 250px;
+  height: 50%;
+}
+body .wrap .box-text h1 {
+  color: #fff;
+  font-size: 6em;
+  width: 100%;
+}
+body .wrap .box-text h1::before {
+  content: attr(data-text);
+  position: absolute;
+  color: #fefe10;
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid #fefe10;
+  animation: animate 8s linear infinite;
+  filter: drop-shadow(0 0 20px #fefe10);
+}
+body .wrap .but_down {
+  height: 25%;
+  display: flex;
+  align-items: center;
+}
+body .wrap .but_down .down {
+  cursor: pointer;
+  width: 90px;
+  height: 90px;
+  font-size: 50px;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fff;
+  transform: rotate(90deg);
+  animation: dropdown 2s linear infinite;
+  color: #fff;
+  transition: 1s;
+}
+body .wrap .but_down .down:hover {
+  box-shadow: 0 0 10px #fefe10;
+  border: 2px solid #fefe10;
+  color: #fefe10;
+  transition: 1s;
+}
+body .wrap_two {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: #000;
+  justify-content: center;
+  align-items: center;
+}
+body .wrap_two .left-side {
+  width: 50%;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+body .wrap_two .left-side #carouselExampleIndicators {
+  width: 80%;
+}
+body .wrap_two .right-side {
+  width: 50%;
+  display: flex;
+  height: 100%;
+  padding: 0 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body .wrap_two .right-side .text h2 {
+  font-size: 43px;
+  color: #fefe10;
+}
+body .wrap_two .right-side .text p {
+  font-size: 20px;
+}
+body .wrap_three {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+}
+body .wrap_three .top {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .wrap_three .top h2 {
+  font-size: 50px;
+}
+body .wrap_three .bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+body .wrap_three .bottom .videos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body .wrap_three .bottom .videos #qwe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+body .wrap_three .bottom .videos #qwe iframe {
+  width: 60%;
+  margin: 30px 0;
+}
+
+@media screen and (max-width: 980px) {
+  body .wrap_two {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body .wrap_two .right-side {
+    width: 100%;
+    height: 30%;
+    padding: 0 10%;
+  }
+  body .wrap_two .left-side {
+    width: 100%;
+    height: 70%;
+  }
+  body .wrap_two .left-side #carouselExampleIndicators {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 688px) {
+  body .wrap .box-text h1 {
+    font-size: 4em;
+  }
+  body .wrap .box-text h1::before {
+    animation: animatetwo 8s linear infinite;
+  }
+}
+@media screen and (max-width: 430px) {
+  body .wrap .box-text h1 {
+    font-size: 3em;
+  }
+  body .wrap .box-text h1::before {
+    animation: animatethree 8s linear infinite;
+  }
+  body .wrap .but_down .down {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
